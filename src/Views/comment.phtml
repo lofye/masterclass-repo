@@ -1,0 +1,7 @@
+<?php
+
+$content .= '
+                <div class="comment"><span class="comment_details">' . $comment['created_by'] . ' | ' .
+    date('n/j/Y g:i a', strtotime($story['created_on'])) . '</span>
+                ' . $comment['comment'] . '</div>
+            ';
