@@ -24,7 +24,7 @@ class User {
             }
             
             if(is_null($error)) {
-                $id = $this->model->create($_POST['username'],$_POST['email'],md5($_POST['username'].$_POST['password']));
+                $id = $this->model->create($_POST['username'],$_POST['email'],$_POST['password']);
                 header("Location: /user/login");
                 exit;
             }

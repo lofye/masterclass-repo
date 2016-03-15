@@ -73,17 +73,18 @@ class User {
     {
         $username = $_POST['user'];
         $password = $_POST['pass'];
-        $password = md5($username . $password); // THIS IS NOT SECURE. DO NOT USE IN PRODUCTION.
-        $sql = 'SELECT id FROM user WHERE username = ? AND password = ? LIMIT 1';
+        $sql = 'SELECT password FROM user WHERE username = ? LIMIT 1';
         $stmt = $this->db->prepare($sql);
-        $stmt->execute(array($username, $password));
-        $count = $stmt->rowCount();
-        if($count <= 0)
+        $stmt->execute(array($username));
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if(isset($user['password']) && password_verify($password, $user['password']))
         {
-            $this->error = 'Your username/password did not match.';
-            return false;
+            return true;
         }
-        return true;
+
+        $this->error = 'Your username/password did not match.';
+        return false;
     }
 
     public function login($username)
@@ -110,9 +111,9 @@ class User {
 
     public function create($username,$email,$password)
     {
-        $sql = 'INSERT INTO user (username, $email, $password) VALUES (?, ?, ?)';
+        $sql = 'INSERT INTO user (username, email, password) VALUES (?, ?, ?)';
         $stmt = $this->db->prepare($sql);
-        $stmt->execute(array($username, $email, $password));
+        $stmt->execute(array($username, $email, password_hash($password, PASSWORD_BCRYPT)));
         return $this->db->lastInsertId();
     }
 
@@ -120,9 +121,6 @@ class User {
     {
         $sql = 'UPDATE user SET password = ? WHERE username = ?';
         $stmt = $this->db->prepare($sql);
-        $stmt->execute(array(
-            md5($_SESSION['username'] . $_POST['password']), // THIS IS NOT SECURE.
-            $_SESSION['username'],
-        ));
+        $stmt->execute(array(password_hash($_POST['password'], PASSWORD_BCRYPT), $_SESSION['username']));
     }
 }

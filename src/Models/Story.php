@@ -56,11 +56,7 @@ class Story {
     {
         $sql = 'INSERT INTO story (headline, url, created_by, created_on) VALUES (?, ?, ?, NOW())';
         $stmt = $this->db->prepare($sql);
-        $stmt->execute(array(
-            $headline,
-            $url,
-            $username,
-        ));
+        $stmt->execute(array($headline, $url, $username));
         return $this->db->lastInsertId();
     }
     
