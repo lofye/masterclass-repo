@@ -1,7 +1,5 @@
 <?php
 
-$config['path'] = __DIR__.'/src/Views';
-
 $config['routes'] = array(
                     '' => 'Masterclass\Controllers\Index/index',
                     'story' => 'Masterclass\Controllers\Story/index',

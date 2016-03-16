@@ -6,13 +6,12 @@ use Masterclass\Models\Comment as CommentModel;
 
 class Story {
 
-    protected $config;
     protected $storyModel;
+    protected $commentModel;
 
-    public function __construct($config) {
-        $this->config = $config;
-        $this->storyModel = new StoryModel($config);
-        $this->commentModel = new CommentModel($config);
+    public function __construct(StoryModel $storyModel, CommentModel $commentModel) {
+        $this->storyModel = $storyModel;
+        $this->commentModel = $commentModel;
     }
     
     public function index() {
@@ -31,19 +30,18 @@ class Story {
         $story['count'] = count($comments);
 
         ob_start();
-        include $this->config['path'].'/story.phtml';
+        require __DIR__.'/../../src/Views/story.phtml';
         $content = ob_get_clean();
 
         if(isset($_SESSION['AUTHENTICATED'])) {
-            include $this->config['path'].'/create-comment.phtml';
+            require __DIR__.'/../../src/Views/create-comment.phtml';
         }
         
         foreach($comments as $comment) {
-            include $this->config['path'].'/comment.phtml';
+            require __DIR__.'/../../src/Views/comment.phtml';
         }
 
-        require $this->config['path'].'/layout.phtml';
-        
+        require __DIR__.'/../../src/Views/layout.phtml';
     }
     
     public function create() {
@@ -59,16 +57,16 @@ class Story {
                 $error = $this->storyModel->getError();
             }
             else{
-                $id = $this->model->create($_POST['headline'], $_POST['url'], $_SESSION['username']);
+                $id = $this->storyModel->create($_POST['headline'], $_POST['url'], $_SESSION['username']);
                 header("Location: /story/?id=$id");
                 exit;
             }
         }
 
         $content = '';
-        include $this->config['path'].'/create-story.phtml';
+        require __DIR__.'/../../src/Views/create-story.phtml';
 
-        require $this->config['path'].'/layout.phtml';
+        require __DIR__.'/../../src/Views/layout.phtml';
     }
     
 }

@@ -5,12 +5,10 @@ use Masterclass\Models\Story as StoryModel;
 
 class Index {
 
-    protected $config;
     protected $model;
     
-    public function __construct($config) {
-        $this->config = $config;
-        $this->model = new StoryModel($config);
+    public function __construct(StoryModel $storyModel) {
+        $this->model = $storyModel;
     }
     
     public function index() {
@@ -21,13 +19,13 @@ class Index {
 
         foreach($stories as $story) {
             ob_start();
-            include $this->config['path'].'/story.phtml';
+            require __DIR__.'/../../src/Views/story.phtml';
             $content .= ob_get_clean();
         }
         
         $content .= '</ol>';
         
-        require $this->config['path'].'/layout.phtml';
+        require __DIR__.'/../../src/Views/layout.phtml';
     }
 }
 

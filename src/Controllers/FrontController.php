@@ -1,13 +1,17 @@
 <?php
 
-namespace Masterclass;
+namespace Masterclass\Controllers;
+use Aura\Di\Container as Container;
 
 class FrontController {
     
-    private $config;
-    
-    public function __construct($config) {
-        $this->_setupConfig($config);
+    protected $config;
+    protected $container;
+
+    public function __construct(Container $container, array $config = []) {
+
+        $this->container = $container;
+        $this->config = $config;
     }
     
     public function execute() {
@@ -15,11 +19,11 @@ class FrontController {
         $call_class = $call['call'];
         $class = ucfirst(array_shift($call_class));
         $method = array_shift($call_class);
-        $o = new $class($this->config);
+        $o = $this->container->newInstance($class);//resolve it out of the DIC
         return $o->$method();
     }
     
-    private function _determineControllers()
+    protected function _determineControllers()
     {
         if (isset($_SERVER['REDIRECT_BASE'])) {
             $rb = $_SERVER['REDIRECT_BASE'];
@@ -45,10 +49,6 @@ class FrontController {
         }
         
         return $return;
-    }
-    
-    private function _setupConfig($config) {
-        $this->config = $config;
     }
     
 }

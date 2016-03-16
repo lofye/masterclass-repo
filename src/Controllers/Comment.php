@@ -5,12 +5,10 @@ use Masterclass\Models\Comment as CommentModel;
 
 class Comment {
 
-    protected $config;
     protected $model;
 
-    public function __construct($config) {
-        $this->config = $config;
-        $this->model = new CommentModel($config);
+    public function __construct(CommentModel $commentModel) {
+        $this->model = $commentModel;
     }
     
     public function create() {

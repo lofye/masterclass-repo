@@ -5,12 +5,10 @@ use Masterclass\Models\User as UserModel;
 
 class User {
 
-    protected $config;
     protected $model;
 
-    public function __construct($config) {
-        $this->config = $config;
-        $this->model = new UserModel($config);
+    public function __construct(UserModel $userModel) {
+        $this->model = $userModel;
     }
     
     public function create() {
@@ -32,9 +30,9 @@ class User {
 
         // Show the create form
         $config = '';
-        include $this->config['path'].'/create-user.phtml';
+        require __DIR__.'/../../src/Views/create-user.phtml';
 
-        require $this->config['path'].'/layout.phtml';
+        require __DIR__.'/../../src/Views/layout.phtml';
         
     }
     
@@ -59,9 +57,9 @@ class User {
 
         $details = $this->model->fetchByUsername($_SESSION['username']);
 
-        include $this->config['path'].'/account.phtml';
+        require __DIR__.'/../../src/Views/account.phtml';
 
-        require $this->config['path'].'/layout.phtml';
+        require __DIR__.'/../../src/Views/layout.phtml';
     }
     
     public function login() {
@@ -80,9 +78,9 @@ class User {
             }
         }
 
-        include $this->config['path'].'/login.phtml';
+        require __DIR__.'/../../src/Views/login.phtml';
 
-        require $this->config['path'].'/layout.phtml';
+        require __DIR__.'/../../src/Views/layout.phtml';
         
     }
     

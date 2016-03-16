@@ -6,7 +6,9 @@
             "email": "derek@geekunity.com"
         }
     ],
-    "require": {},
+    "require": {
+        "aura/di": "~2.1"
+    },
     "require-dev": {
         "laravel/homestead": "^3.0",
         "phpunit/phpunit": "~4.4"
