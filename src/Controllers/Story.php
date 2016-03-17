@@ -58,7 +58,7 @@ class Story {
             }
             else{
                 $id = $this->storyModel->create($_POST['headline'], $_POST['url'], $_SESSION['username']);
-                header("Location: /story/?id=$id");
+                header("Location: /story?id=$id");
                 exit;
             }
         }

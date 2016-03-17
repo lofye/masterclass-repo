@@ -1,27 +1,29 @@
 <?php
 
 namespace Masterclass\Models;
-use PDO;
+use Masterclass\Dbal\AbstractDb;
 
 class User {
-    
-    public $db;
-    protected $config;
-    protected $error = null;
 
     /**
-     * @param PDO $pdo
+     * @var AbstractDb
      */
-    public function __construct(PDO $pdo) {
-        $this->db = $pdo;
+    protected $db;
+
+    protected $config;
+    protected $error;
+
+    /**
+     * @param AbstractDb $db
+     */
+    public function __construct(AbstractDb $db) {
+        $this->db = $db;
     }
 
     public function fetchByUsername($username)
     {
         $check_sql = 'SELECT * FROM user WHERE username = ? LIMIT 1';
-        $check_stmt = $this->db->prepare($check_sql);
-        $check_stmt->execute(array($username));
-        return $check_stmt->fetch(PDO::FETCH_ASSOC);
+        return $this->db->fetchOne($check_sql, array($username));
     }
 
     public function exists($username)
@@ -32,9 +34,7 @@ class User {
     public function fetchOne($id)
     {
         $sql = 'SELECT * FROM user WHERE id = ?';
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute(array($id));
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $this->db->fetchOne($sql, array($id));
     }
 
     public function getError()
@@ -73,9 +73,7 @@ class User {
         $username = $_POST['user'];
         $password = $_POST['pass'];
         $sql = 'SELECT password FROM user WHERE username = ? LIMIT 1';
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute(array($username));
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $this->db->fetchOne($sql, array($username));
 
         if(isset($user['password']) && password_verify($password, $user['password']))
         {
@@ -111,15 +109,13 @@ class User {
     public function create($username,$email,$password)
     {
         $sql = 'INSERT INTO user (username, email, password) VALUES (?, ?, ?)';
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute(array($username, $email, password_hash($password, PASSWORD_BCRYPT)));
+        $this->db->execute($sql, array($username, $email, password_hash($password, PASSWORD_BCRYPT)));
         return $this->db->lastInsertId();
     }
 
     public function update($username,$password)
     {
         $sql = 'UPDATE user SET password = ? WHERE username = ?';
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute(array(password_hash($_POST['password'], PASSWORD_BCRYPT), $_SESSION['username']));
+        return $this->db->execute($sql, array(password_hash($_POST['password'], PASSWORD_BCRYPT), $_SESSION['username']));
     }
 }

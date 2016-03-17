@@ -6,7 +6,7 @@ $content = '
         <label>Username:</label> ' . $details['username'] . '<br />
         <label>Email:</label>' . $details['email'] . ' <br />
 
-         <form method="post">
+         <form method="post" action="/user/account/save">
                 ' . $error . '<br />
             <label>Password</label> <input type="password" name="password" value="" /><br />
             <label>Password Again</label> <input type="password" name="password_check" value="" /><br />

@@ -2,20 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb4be07d-365e-47c1-bb6f-eb01e8b384e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/diconfig.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FrontController.php" afterPath="$PROJECT_DIR$/src/Controllers/FrontController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Configuration/DiConfig.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Configuration/RouterConfig.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dbal/AbstractDb.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dbal/Mysql.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Router/Router.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Router/Routes/AbstractRoute.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Router/Routes/GetRoute.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Router/Routes/PostRoute.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Router/Routes/RouteInterface.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/diconfig.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.php" afterPath="$PROJECT_DIR$/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/Comment.php" afterPath="$PROJECT_DIR$/src/Controllers/Comment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/Index.php" afterPath="$PROJECT_DIR$/src/Controllers/Index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/FrontController.php" afterPath="$PROJECT_DIR$/src/Controllers/FrontController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/Story.php" afterPath="$PROJECT_DIR$/src/Controllers/Story.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/User.php" afterPath="$PROJECT_DIR$/src/Controllers/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Models/Comment.php" afterPath="$PROJECT_DIR$/src/Models/Comment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Models/Story.php" afterPath="$PROJECT_DIR$/src/Models/Story.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Models/User.php" afterPath="$PROJECT_DIR$/src/Models/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/account.phtml" afterPath="$PROJECT_DIR$/src/Views/account.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/create-story.phtml" afterPath="$PROJECT_DIR$/src/Views/create-story.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/create-user.phtml" afterPath="$PROJECT_DIR$/src/Views/create-user.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/login.phtml" afterPath="$PROJECT_DIR$/src/Views/login.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/story.phtml" afterPath="$PROJECT_DIR$/src/Views/story.phtml" />
     </list>
     <ignored path="masterclass-repo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,27 +59,36 @@
         <option value="$PROJECT_DIR$/src/Models/Index.php" />
         <option value="$PROJECT_DIR$/src/Interfaces/DataStore.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/src/Views/listing.phtml" />
         <option value="$PROJECT_DIR$/src/Views/create.phtml" />
         <option value="$PROJECT_DIR$/src/Views/comment.phtml" />
+        <option value="$PROJECT_DIR$/src/Controllers/User.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/diconfig.php" />
+        <option value="$PROJECT_DIR$/src/Controllers/Index.php" />
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/src/Configuration/RouterConfig.php" />
+        <option value="$PROJECT_DIR$/src/Controllers/Comment.php" />
+        <option value="$PROJECT_DIR$/src/Views/story.phtml" />
+        <option value="$PROJECT_DIR$/src/Controllers/Story.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/src/Views/create-story.phtml" />
         <option value="$PROJECT_DIR$/src/Views/create-user.phtml" />
-        <option value="$PROJECT_DIR$/src/Views/login.phtml" />
-        <option value="$PROJECT_DIR$/src/Views/story.phtml" />
         <option value="$PROJECT_DIR$/src/Views/account.phtml" />
-        <option value="$PROJECT_DIR$/src/Controllers/User.php" />
-        <option value="$PROJECT_DIR$/src/Controllers/Comment.php" />
-        <option value="$PROJECT_DIR$/src/Models/User.php" />
+        <option value="$PROJECT_DIR$/src/Views/login.phtml" />
+        <option value="$PROJECT_DIR$/src/Dbal/AbstractDb.php" />
+        <option value="$PROJECT_DIR$/src/Controllers/FrontController.php" />
         <option value="$PROJECT_DIR$/src/Models/Story.php" />
         <option value="$PROJECT_DIR$/src/Models/Comment.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/Controllers/FrontController.php" />
-        <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/diconfig.php" />
+        <option value="$PROJECT_DIR$/src/Models/User.php" />
+        <option value="$PROJECT_DIR$/src/Router/Router.php" />
+        <option value="$PROJECT_DIR$/src/Router/Routes/GetRoute.php" />
+        <option value="$PROJECT_DIR$/src/Router/Routes/PostRoute.php" />
+        <option value="$PROJECT_DIR$/src/Router/Routes/RouteInterface.php" />
+        <option value="$PROJECT_DIR$/src/Router/Routes/AbstractRoute.php" />
+        <option value="$PROJECT_DIR$/src/Configuration/DiConfig.php" />
+        <option value="$PROJECT_DIR$/src/Dbal/Mysql.php" />
         <option value="$PROJECT_DIR$/routes.php" />
-        <option value="$PROJECT_DIR$/src/Controllers/Index.php" />
-        <option value="$PROJECT_DIR$/src/Controllers/Story.php" />
       </list>
     </option>
   </component>
@@ -83,8 +102,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="246" />
-    <option name="y" value="93" />
+    <option name="x" value="296" />
+    <option name="y" value="278" />
     <option name="width" value="1440" />
     <option name="height" value="873" />
   </component>
@@ -114,7 +133,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,6 +166,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Router" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Router" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -201,7 +259,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Dbal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="masterclass-repo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Configuration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -221,6 +315,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,14 +326,15 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Models" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Router/Routes" />
       <recent name="$PROJECT_DIR$/src/Controllers" />
       <recent name="$PROJECT_DIR$/src/Views" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Models" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -285,14 +381,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="246" y="93" width="1440" height="873" extended-state="0" />
+    <frame x="296" y="278" width="1440" height="873" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22532189" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22818312" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822478" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277849" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -366,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14091858">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/create-comment.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.116618074">
@@ -387,31 +476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/create-story.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14577259">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/comment.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029940119">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/create-user.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16034986">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/login.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13119534">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -423,44 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/story.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14363885">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Views/account.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26675788">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Story.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <marker date="1458152099000" expanded="true" signature="277:309" placeholder="SELECT * FRO... story" />
-            <marker date="1458152099000" expanded="true" signature="497:541" placeholder="SELECT * FRO... story" />
-            <marker date="1458152099000" expanded="true" signature="742:800" placeholder="SELECT COUNT... comment" />
-            <marker date="1458152099000" expanded="true" signature="1493:1574" placeholder="INSERT INTO story... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <marker date="1458152105000" expanded="true" signature="284:324" placeholder="SELECT * FRO... comment" />
-            <marker date="1458152105000" expanded="true" signature="543:630" placeholder="INSERT INTO comment... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2257182">
@@ -469,80 +499,230 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/User.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="13" column="7" selection-start-line="11" selection-start-column="0" selection-end-line="13" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.18467852">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5144033">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/story.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14403293">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <marker date="1458152096000" expanded="true" signature="325:370" placeholder="SELECT * FRO... user" />
-            <marker date="1458152096000" expanded="true" signature="699:730" placeholder="SELECT * FRO... user" />
-            <marker date="1458152096000" expanded="true" signature="1900:1952" placeholder="SELECT id FR... user" />
-            <marker date="1458152096000" expanded="true" signature="2905:2966" placeholder="INSERT INTO user... " />
-            <marker date="1458152096000" expanded="true" signature="3223:3270" placeholder="UPDATE user " />
+            <marker date="1458234850000" expanded="true" signature="16:349" placeholder="..." />
+            <marker date="1458234850000" expanded="true" signature="149:343" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes.php">
+    <entry file="file://$PROJECT_DIR$/src/Views/login.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.18518518">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <marker date="1458235127000" expanded="true" signature="78:373" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/account.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16460906">
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/src/Views/create-user.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20519836">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="0.061728396">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="61" />
+          <folding>
+            <marker date="1458235066000" expanded="true" signature="81:598" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/Story.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30232558">
-          <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.7064472">
+          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Views/create-story.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.061728396">
+          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
+          <folding>
+            <marker date="1458235033000" expanded="true" signature="79:385" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16460906">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36935705">
+        <state vertical-scroll-proportion="0.37037036">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12311901">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/FrontController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.10807113">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.5349794">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding>
+            <element signature="e#42#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2674897">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <marker date="1458236763000" expanded="true" signature="381:421" placeholder="SELECT * FRO... comment" />
+            <marker date="1458236763000" expanded="true" signature="566:653" placeholder="INSERT INTO comment... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Story.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.125">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <marker date="1458236759000" expanded="true" signature="374:406" placeholder="SELECT * FRO... story" />
+            <marker date="1458236759000" expanded="true" signature="523:567" placeholder="SELECT * FRO... story" />
+            <marker date="1458236759000" expanded="true" signature="692:750" placeholder="SELECT COUNT... comment" />
+            <marker date="1458236759000" expanded="true" signature="1340:1421" placeholder="INSERT INTO story... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.375">
+          <caret line="118" column="15" selection-start-line="118" selection-start-column="15" selection-end-line="118" selection-end-column="15" />
+          <folding>
+            <marker date="1458236896000" expanded="true" signature="392:437" placeholder="SELECT * FRO... user" />
+            <marker date="1458236896000" expanded="true" signature="677:708" placeholder="SELECT * FRO... user" />
+            <marker date="1458236896000" expanded="true" signature="1807:1859" placeholder="SELECT id FR... user" />
+            <marker date="1458236896000" expanded="true" signature="2741:2802" placeholder="INSERT INTO user... " />
+            <marker date="1458236896000" expanded="true" signature="3027:3074" placeholder="UPDATE user " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Router/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/src/Router/Routes/GetRoute.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18467852">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/diconfig.php">
+    <entry file="file://$PROJECT_DIR$/src/Router/Routes/PostRoute.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9644323">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Router/Routes/AbstractRoute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.458333">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Router/Routes/RouteInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041152265">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14403293">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dbal/Mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24691358">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dbal/AbstractDb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28806585">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Configuration/DiConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30041152">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="e#45#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Configuration/RouterConfig.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32921812">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#45#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42735043">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
